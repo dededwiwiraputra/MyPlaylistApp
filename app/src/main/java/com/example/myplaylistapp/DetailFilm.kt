@@ -21,12 +21,7 @@ class DetailFilm: AppCompatActivity() {
         val tvYear: TextView = findViewById(R.id.tv_item_year)
         val tvDescription: TextView = findViewById(R.id.tv_item_description)
 
-        val film = if (Build.VERSION.SDK_INT >= 33) {
-            intent.getParcelableExtra(EXTRA_PERSON, Film::class.java)
-        } else {
-            @Suppress("DEPRECATION")
-            intent.getParcelableExtra(EXTRA_PERSON)
-        }
+        val film = intent.getParcelableExtra<Film>(EXTRA_PERSON)
 
         if (film != null) {
             Glide.with(this)

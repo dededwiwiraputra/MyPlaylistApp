@@ -17,6 +17,7 @@ class AboutMe : AppCompatActivity() {
         actionbar.setDisplayHomeAsUpEnabled(true)
     }
     override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
         return true
     }
 }
